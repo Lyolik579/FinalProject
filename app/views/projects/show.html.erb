@@ -1,0 +1,29 @@
+<h1><%= @project.name %></h1>
+
+<table class="table table-striped"
+	<thead>
+		Projects
+	</thead>
+	<tbody>
+	<tr>
+		<td>name</td>
+		<td>Category</td>
+	</tr>
+	<tr>
+		<% @project.each do |project|%>
+		<td><%=project.name %></td>
+		<td><%=project.category %></td>
+	</tr>
+	<%end%>
+
+
+	</tbody>
+</table>
+
+
+<!-- add an artist's album here! -->
+<p>
+  <%= link_to "Edit Project", edit_project_path(@project) %>
+  <%= link_to "Delete Project", project_path(@project), method: :delete %>
+</p>
+<%= link_to  "Return to Home", projects_path %>

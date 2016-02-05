@@ -1,0 +1,11 @@
+<%= form_for @project do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: "Project name", class: "form-control", autofocus: true %>
+  </div>
+  <div class="form-group">
+    <%= f.label :category %>
+    <%= f.text_field :category, placeholder: "Category", class: "form-control" %>
+  </div>
+  <%= f.submit "Save Project", class: "btn btn-block btn-default" %>
+<% end %>

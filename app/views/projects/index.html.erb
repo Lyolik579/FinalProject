@@ -1,0 +1,13 @@
+<h1>Projects#index</h1>
+<h1>Projects</h1>
+<hr>
+<% @projects.each do |project| %>
+  <p class='project'>
+    <strong><%= project.name %></strong>
+
+    <%= link_to "View Project", project_path(project) %>
+  </p>
+  <hr>
+<% end %>
+
+<%= link_to "Home", root_path  %>

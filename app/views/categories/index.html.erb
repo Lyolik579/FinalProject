@@ -1,0 +1,11 @@
+<h1>Project Categories</h1>
+<hr>
+<% @category.each do |category| %>
+  <p class='category'>
+    <strong><%= category.name %></strong>
+
+    <%= link_to "View Category", category_path(category) %>
+  </p>
+  <hr>
+<% end %>
+
