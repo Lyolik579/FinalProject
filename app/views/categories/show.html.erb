@@ -1,11 +1,16 @@
 <h1>Examples of <%= @category.name %> Projects</h1>
+
+
 <% @projects.each do |project| %> 
-<h2>Project Name: <%= project.name %><h2>
-<p>Project Description:<%= project.description %></p>
-<%= project.duration %>
-<%= project.scope %>
-<%= project.risk %>
-<%= project.members %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Project Name: <%= project.name %></h3>
+  </div>
+  <div class="panel-body">
+    Project Description:<%= project.description %>
+  </div>
+  <%= link_to  "View Project", project_path(project) %>
+</div>
 <% end %>
 
 

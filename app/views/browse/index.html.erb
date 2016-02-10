@@ -1,18 +1,36 @@
-<h1>Browse Projects</h1>
+<center><h1>Browse Projects</h1></center>
+<br><p>
+<center>
+<% if user_signed_in? %>
+    <%= link_to '<button class="btn btn-primary" role="button" type="button">Create New Project</button>'.html_safe, new_project_path %>
+  <%end%>
+</center>
+<br>
 
+<br>
+<center>
+<div style="display: inline-block;">
 <div class="row">
-	<% @category.each do |category| %>
-  <div class="col-sm-6 col-d-4">
-    <div class="thumbnail">
-    </div>
-      <img src="/assets/bb.jpg" alt="BB">
-      <div class="caption">
-        <h3><%= category.name %></h3>
-        <p>Description</p>
-        <p>
-        <%= link_to '<button class="btn btn-primary" role="button" type="button">View Category</button>'.html_safe, category_path(category) %>
-    	</p>
-    	<% end %>
-    	</div>
+      <% @category.each do |category| %>
+
+      <div class="thumbnail">
+
+        <%= image_tag(category.image_url, class:"category") %>
+        <div class="caption">
+          <h3><%= category.name %></h3>
+          <p><%= category.description %></p>
+          <%= link_to '<button class="btn btn-primary" role="button" type="button">View Category</button>'.html_safe, category_path(category) %>
+      </div>
   </div>
+<% end %>
 </div>
+</div>
+</center>
+
+<br><p>
+<center>
+<% if user_signed_in? %>
+    <%= link_to '<button class="btn btn-primary" role="button" type="button">Create New Project</button>'.html_safe, new_project_path %>
+  <%end%>
+</center>
+<br>

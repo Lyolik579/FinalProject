@@ -36,7 +36,7 @@
 @import "bootstrap";
 
 .image {
-	width: 100%;
+	width: 85%;
     height: 100%;
     position: absolute;
     z-index: -1;
@@ -47,3 +47,17 @@
 	background-color: #1E90FF;
 	opacity: 0.4;
 }
+
+.gallery {
+    display:block;
+}
+
+.thumbnail {
+    display:inline-block;
+    border:1px solid black;
+    float:left;
+    margin: 15px;
+    height: 600px;
+    width: 550px;
+}
+

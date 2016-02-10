@@ -1,29 +1,17 @@
 <h1><%= @project.name %></h1>
 
-<table class="table table-striped"
-	<thead>
-		Projects
-	</thead>
-	<tbody>
-	<tr>
-		<td>name</td>
-		<td>Category</td>
+		
+
+	<ul>
+		<li>Description: <%= @project.description %></li>
+		<li>Cost $<%= @project.cost %></li>
+		<li>Risks: <%= @project.risk %></li>
 	</tr>
-	<tr>
-		<% @project.each do |project|%>
-		<td><%=project.name %></td>
-		<td><%=project.category %></td>
-	</tr>
-	<%end%>
+	</ul>
 
 
-	</tbody>
-</table>
 
-
-<!-- add an artist's album here! -->
-<p>
+<% if user_signed_in? %>
   <%= link_to "Edit Project", edit_project_path(@project) %>
   <%= link_to "Delete Project", project_path(@project), method: :delete %>
-</p>
-<%= link_to  "Return to Home", projects_path %>
+  <%end%>

@@ -1,15 +1,17 @@
 class ProjectsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :set_project, only: [:show, :edit]
 
   def index
-  	@projects = Project.all
+    @projects = Project.search_for(params[:q])
   end
 
   def new
   	@project = Project.new
+    @categories = Category.all
   end
 
   def show
+    @project = Project.find params[:id]
   end
 
   def edit
@@ -30,7 +32,11 @@ class ProjectsController < ApplicationController
 private
 
     def project_params
-      params.require(:project).permit(:name, :category)
+      params.require(:project).permit(:name, :scope, :cost, :risk, :members, :tasks, :duration, :procurement, :resources, :description, :category_id)
+    end
+
+    def set_project
+      @project = Project.find params[:id]
     end
 
 end
